@@ -448,9 +448,7 @@ public class EditEventActivity extends AppCompatActivity {
         if (tvReminderChosen != null) tvReminderChosen.setText("—");
         manualReminderAtMillis = 0L;
 
-        // If there is a reminderAtMillis, decide how to show it:
-        // - if it matches one of presets (5m/15m/1h/1d/1w), select preset
-        // - else use MANUAL and show date
+
         if (spReminderType != null) {
             if (!ev.reminderEnabled || ev.reminderAtMillis <= 0L) {
                 spReminderType.setSelection(REM_30_DEFAULT());

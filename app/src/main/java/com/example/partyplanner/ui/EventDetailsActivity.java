@@ -173,7 +173,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         String[] items = new String[] {
                 "Поделиться текстом",
                 "Поделиться открыткой (PNG)",
-                "Отправить на email (как было)"
+                "Отправить на email"
         };
 
         new AlertDialog.Builder(this)
