@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/bg">
+
+    <!-- TOP APP BAR (с нормальной высотой + паддингом) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/primary"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:title="Party Planner"
+        app:titleTextColor="@color/white"
+        app:menu="@menu/menu_top_events"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Search box -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Поиск по названию или адресу"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textHint"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Modes row -->
+    <!-- Modes row -->
+    <HorizontalScrollView
+        android:id="@+id/modesScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/etSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAll"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginEnd="8dp"
+                android:text="Все"
+                android:textAllCaps="false"
+                app:toggleCheckedStateOnClick="true"
+                app:cornerRadius="22dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/chip_stroke"
+                app:backgroundTint="@color/chip_bg_tint"
+                android:textColor="@color/chip_text_tint"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOrg"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginEnd="8dp"
+                android:text="Я организатор"
+                android:textAllCaps="false"
+                app:toggleCheckedStateOnClick="true"
+                app:cornerRadius="22dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/chip_stroke"
+                app:backgroundTint="@color/chip_bg_tint"
+                android:textColor="@color/chip_text_tint"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInv"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:text="Я приглашен"
+                android:textAllCaps="false"
+                app:toggleCheckedStateOnClick="true"
+                app:cornerRadius="22dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/chip_stroke"
+                app:backgroundTint="@color/chip_bg_tint"
+                android:textColor="@color/chip_text_tint"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    </HorizontalScrollView>
+
+    <!-- LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/modesScroll"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Floating ADD -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:tint="@color/white"
+        app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavContainer"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- EMPTY STATE -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/modesScroll"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvEmptyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ничего не найдено"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/textPrimary" />
+
+        <TextView
+            android:id="@+id/tvEmptySubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Попробуй изменить фильтры или поиск"
+            android:textSize="14sp"
+            android:textColor="@color/textHint" />
+
+        <Button
+            android:id="@+id/btnResetFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="14dp"
+            android:text="Сбросить фильтры"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_btn_pill" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:menu="@menu/menu_bottom_nav"
+            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@color/bottom_nav_item"
+            app:itemTextColor="@color/bottom_nav_item"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

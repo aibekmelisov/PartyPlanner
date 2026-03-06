@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.PartyPlanner" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Основные цвета -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/purpleLight</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Фон приложения -->
+        <item name="android:colorBackground">@color/bg</item>
+
+        <!-- Поля ввода -->
+        <item name="colorSurface">@color/inputBg</item>
+
+        <!-- Акцентные элементы -->
+        <item name="colorSecondary">@color/primaryDark</item>
+
+        <!-- Цвет текста -->
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+
+    </style>
+
+    <style name="Theme.PartyPlanner" parent="Base.Theme.PartyPlanner" />
+
+</resources>

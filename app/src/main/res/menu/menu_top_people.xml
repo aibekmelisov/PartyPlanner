@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search_people"
+        android:title="Поиск"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_filter_group"
+        android:title="Фильтр"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="Сортировка"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="always">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sort_name"
+                    android:title="По имени"
+                    android:checked="true"/>
+                <item
+                    android:id="@+id/sort_group"
+                    android:title="По группе"/>
+                <item
+                    android:id="@+id/sort_contacts"
+                    android:title="По контакту"/>
+            </group>
+
+            <item
+                android:id="@+id/sort_toggle_dir"
+                android:title="A→Z / Z→A"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_import_csv"
+        android:title="Импорт CSV"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1051119771842",
+    "project_id": "party-1f18b",
+    "storage_bucket": "party-1f18b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051119771842:android:fd92277d3ff05d4e3b9b5b",
+        "android_client_info": {
+          "package_name": "com.example.partyplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPMN_8ZjPynttSrelDiqlbpt9af8itS_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

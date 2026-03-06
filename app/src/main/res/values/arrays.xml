@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="invite_template_labels">
+        <item>✨ Classic</item>
+        <item>🎉 Birthday</item>
+        <item>🖤 Formal</item>
+        <item>🎬 Movie night</item>
+        <item>🔥 BBQ</item>
+        <item>🧸 Kids</item>
+    </string-array>
+
+    <!-- ВАЖНО: ids должны совпадать по позиции с labels -->
+    <string-array name="invite_template_ids">
+        <item>classic</item>
+        <item>birthday</item>
+        <item>formal</item>
+        <item>movie</item>
+        <item>bbq</item>
+        <item>kids</item>
+    </string-array>
+
+</resources>

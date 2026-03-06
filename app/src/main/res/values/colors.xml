@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Основной цвет -->
+    <color name="primary">#4CAF50</color>
+    <color name="primaryDark">#FF9800</color>
+    <color name="purpleLight">#93C5FD</color>
+
+    <!-- Фон -->
+    <color name="bg">#F5F8FF</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Текст -->
+    <color name="textPrimary">#1F2937</color>
+    <color name="textHint">#6B7280</color>
+
+    <!-- UI элементы -->
+    <color name="chipBg">#E8F0FF</color>
+    <color name="chipBorder">#C7D7FF</color>
+    <color name="chip_stroke">#D7CFF0</color>
+    <color name="bottomNavBg">#FFFFFF</color>
+    <color name="stroke">#D6E2FF</color>
+    <color name="inputBg">#FFFFFF</color>
+
+    <!-- RSVP -->
+    <color name="danger">#E53935</color>
+    <color name="rsvp_default">#EEEEEE</color>
+    <color name="rsvp_green">#4CAF50</color>
+    <color name="rsvp_yellow">#FFC107</color>
+    <color name="rsvp_red">#F44336</color>
+
+</resources>
